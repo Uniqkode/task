@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:task/core/constant/constant.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:task/main.dart';
 import '../../../core/components/component.dart';
 import '../view_models/bloc/home_bloc_bloc.dart';
 
@@ -37,13 +36,8 @@ class _HomeViewState extends State<HomeView> {
                         alignment: Alignment.center,
                         children: [
                           Positioned(
-                              top: 1.h,
+                              top: 2.h,
                               child: Image.asset(homeModel.coverImage)),
-                          // Custom Paint for blending effect
-                          CustomPaint(
-                            size: MediaQuery.of(context).size,
-                            painter: BlendPainter(),
-                          ),
                           Positioned(
                               top: 80.h,
                               // left: 60,
@@ -246,6 +240,14 @@ class _HomeViewState extends State<HomeView> {
                       ),
                     )
                   ],
+                ),
+                // Custom Paint for blending effect
+                Positioned(
+                  bottom: MediaQuery.sizeOf(context).height * 0.29.r,
+                  child: CustomPaint(
+                    size: MediaQuery.of(context).size,
+                    painter: BlendPainter(),
+                  ),
                 ),
                 Positioned(
                   top: MediaQuery.sizeOf(context).height * 0.527.r,
