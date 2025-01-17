@@ -48,10 +48,10 @@ class HomeModel {
       name: map['name'] as String,
       views: map['views'] as String,
       time: map['time'] as String,
+      answer: map['answer'] as String,
       pQuestion: map['pQuestion'] as String,
       coverImage: map['coverimage'] as String,
       profilePicture: map['profilepicture'] as String,
-      answer: map['answer'] as String,
       answers: List<Answers>.from((map['answers'] as List)
           .map((x) => Answers.fromMap(x as Map<String, dynamic>))),
     );

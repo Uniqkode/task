@@ -1,17 +1,23 @@
 part of 'home_bloc_bloc.dart';
 
 // States for the ListItemsBloc
-@immutable
 sealed class HomeBlocState {}
 
 final class HomeBlocInitial extends HomeBlocState {}
 
-class HomeBlocLoadedState extends HomeBlocState {
+class HomeLoadedState extends HomeBlocState {
   final HomeModel homeModel;
-  HomeBlocLoadedState({required this.homeModel});
+  final int currentIndex;
+  final int? selectedIndex; // Add selectedIndex
+
+  HomeLoadedState({
+    required this.homeModel,
+    required this.currentIndex,
+    this.selectedIndex,
+  });
 }
 
-class HomeBlocErrorState extends HomeBlocState {
+class HomeErrorState extends HomeBlocState {
   final String error;
-  HomeBlocErrorState({required this.error});
+  HomeErrorState({required this.error});
 }
